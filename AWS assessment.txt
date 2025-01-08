@@ -1,0 +1,213 @@
+1) An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet.
+
+Which solution will provide private network connectivity to Amazon S3?
+
+A] Create a gateway VPC endpoint to the S3 bucket.
+B] Stream the logs to Amazon CloudWatch Logs. Export the logs to the S3 bucket.
+C] Create an instance profile on Amazon EC2 to allow S3 access.
+D] Create an Amazon API Gateway API with a private link to access the S3 endpoint.
+
+
+
+2) A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created a second EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time.
+
+What should a solutions architect propose to ensure users see all of their documents at once?
+
+A] Copy the data so both EBS volumes contain all the documents
+B] Configure the Application Load Balancer to direct a user to the server with the documents
+C] Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS
+D] Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server
+
+
+3)A company has an application that runs on Amazon EC2 instances and uses an Amazon Aurora database. The EC2 instances connect to the database by using user names and passwords that are stored locally in a file. The company wants to minimize the operational overhead of credential management.
+
+What should a solutions architect do to accomplish this goal?
+
+A] Use AWS Secrets Manager. Turn on automatic rotation.
+B] Use AWS Systems Manager Parameter Store. Turn on automatic rotation.
+C] Create an Amazon S3 bucket to store objects that are encrypted with an AWS Key Management Service (AWS KMS) encryption key. Migrate the credential file to the S3 bucket. Point the application to the S3 bucket.
+D] Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for each EC2 instance. Attach the new EBS volume to each EC2 instance. Migrate the credential file to the new EBS volume. Point the application to the new EBS volume.
+
+
+4)A global company hosts its web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The web application has static data and dynamic data. The company stores its static data in an Amazon S3 bucket. The company wants to improve performance and reduce latency for the static data and dynamic data. The company is using its own domain name registered with Amazon Route 53.
+
+What should a solutions architect do to meet these requirements?
+
+A] Create an Amazon CloudFront distribution that has the S3 bucket and the ALB as origins. Configure Route 53 to route traffic to the CloudFront distribution.
+B] Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint Configure Route 53 to route traffic to the CloudFront distribution.
+C] Create an Amazon CloudFront distribution that has the S3 bucket as an origin. Create an AWS Global Accelerator standard accelerator that has the ALB and the CloudFront distribution as endpoints. Create a custom domain name that points to the accelerator DNS name. Use the custom domain name as an endpoint for the web application.
+D] Create an Amazon CloudFront distribution that has the ALB as an origin. Create an AWS Global Accelerator standard accelerator that has the S3 bucket as an endpoint. Create two domain names. Point one domain name to the CloudFront DNS name for dynamic content. Point the other domain name to the accelerator DNS name for static content. Use the domain names as endpoints for the web application.
+
+
+5)A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. The Auto Scaling group scales based on CPU utilization metrics. The ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance.
+
+The database's performance degrades quickly as application load increases. The application handles more read requests than write transactions. The company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability.
+
+Which solution will meet these requirements?
+
+A] Use Amazon Redshift with a single node for leader and compute functionality.
+B] Use Amazon RDS with a Single-AZ deployment. Configure Amazon RDS to add reader instances in a different Availability Zone.
+C] Use Amazon Aurora with a Multi-AZ deployment. Configure Aurora Auto Scaling with Aurora Replicas.
+D] Use Amazon ElastiCache for Memcached with EC2 Spot Instances.
+
+
+
+6) What is the primary function of an Amazon VPC?
+
+A) To store data securely
+B) To host a database service
+C) To isolate resources in a virtual network
+D) To provide high availability for EC2 instances
+
+
+7) Which of the following is true about VPC peering?
+
+A) VPC peering allows two VPCs in the same region to share subnets
+B) VPC peering can only occur between VPCs in different regions
+C) VPC peering allows direct communication between VPCs in the same region
+D) VPC peering only works if both VPCs use the same CIDR block
+
+
+8) Which component in AWS enables access to the internet from a VPC?
+
+A) Virtual Private Gateway
+B) Internet Gateway
+C) NAT Gateway
+D) Transit Gateway
+
+9)Which of the following is used to control network traffic to/from EC2 instances in a VPC?
+
+A) Subnets
+B) Security Groups
+C) Route Tables
+D) Elastic Load Balancer
+
+10) What is a NAT Gateway used for in a VPC?
+
+A) To route traffic between VPCs
+B) To allow instances in private subnets to access the internet
+C) To connect a VPC to an on-premises network
+D) To load balance traffic across multiple EC2 instances
+
+
+11) Amazon S3 (Simple Storage Service)
+Which of the following is the default storage class for objects in Amazon S3?
+
+A) S3 Intelligent-Tiering
+B) S3 Glacier
+C) S3 Standard
+D) S3 One Zone-IA
+
+
+12) Which feature of Amazon S3 allows you to recover deleted or overwritten objects?
+
+A) Data Lifecycle Policies
+B) Versioning
+C) Cross-Region Replication
+D) Bucket Policy
+
+
+13) What is the maximum size of an individual object you can store in Amazon S3?
+
+A) 10 TB
+B) 5 TB
+C) 1 TB
+D) 100 GB
+
+
+14)Which of the following is the best option to reduce the cost of storing infrequently accessed data in S3?
+
+A) S3 Standard
+B) S3 Glacier
+C) S3 One Zone-IA
+D) S3 Intelligent-Tiering
+
+
+15)What does S3 event notification allow you to do?
+
+A) Store S3 object versions
+B) Automatically replicate data across regions
+C) Trigger other AWS services in response to changes in S3 objects
+D) Encrypt data at rest
+
+
+16) Amazon EC2 (Elastic Compute Cloud)
+Which EC2 pricing model allows you to pay for compute capacity by the hour with no long-term commitments?
+
+A) Reserved Instances
+B) Spot Instances
+C) On-Demand Instances
+D) Dedicated Hosts
+
+
+17) Which of the following EC2 instance types is designed for memory-intensive applications?
+
+A) T2 instances
+B) M5 instances
+C) R5 instances
+D) C5 instances
+
+
+18) Which service can be used to automatically scale EC2 instances to handle varying traffic loads?
+
+A) Elastic Load Balancer
+B) AWS Auto Scaling
+C) CloudWatch
+D) EC2 Image Builder
+
+
+19) What is the purpose of an Elastic Load Balancer (ELB)?
+
+A) To provide persistent block storage for EC2 instances
+B) To monitor EC2 instance health
+C) To distribute incoming traffic across multiple EC2 instances
+D) To back up EC2 instance data to Amazon S3
+
+
+20) Which EC2 feature allows you to isolate instances from others on the same physical hardware?
+
+A) VPC
+B) Security Groups
+C) Dedicated Hosts
+D) Elastic IP
+
+
+21) How can you provide secure, key-based authentication for EC2 instances?
+
+A) By using an IAM role
+B) By attaching an SSH key pair to the EC2 instance
+C) By enabling multi-factor authentication
+D) By configuring an instance metadata service
+
+
+22)Which AWS service provides persistent block storage that can be attached to EC2 instances?
+
+A) Amazon S3
+B) Amazon EBS
+C) Amazon Glacier
+D) AWS Lambda
+
+23) Which of the following is a benefit of using Spot Instances in EC2?
+
+A) Guaranteed compute capacity
+B) Lower cost compared to On-Demand Instances
+C) Automatic scaling based on load
+D) Persistent storage for data
+
+
+24) What is the primary function of EC2 instance metadata?
+
+A) To provide instance metadata to CloudWatch
+B) To retrieve information about the EC2 instance such as IP addresses and region
+C) To store application data on EC2 instances
+D) To allow EC2 instances to connect to S3 buckets
+
+
+25) What is the maximum number of Elastic IPs (EIPs) you can associate with an EC2 instance by default?
+
+A) 1
+B) 5
+C) 10
+D) 50
+
+ 
